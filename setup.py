@@ -44,6 +44,6 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
     ],
     install_requires=[
-        'kazoo==2.9.0'
+        'kazoo==2.8.0'
     ],
 )

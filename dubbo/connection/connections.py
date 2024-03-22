@@ -262,6 +262,8 @@ class SelectConnectionPool(BaseConnectionPool):
         while 1:
             try:
                 conns = self._connection_pool.values()
+                if not conns:
+                    continue
                 readable, _, _ = select.select(conns, [], [], self.select_timeout)
             except socket.error as e:
                 logger.exception(e)
