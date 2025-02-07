@@ -42,7 +42,7 @@ class DubboClient(object):
         self.__zk_register = zk_register
         self.__host = host
 
-    def call(self, method, args=(), timeout=None):
+    def call(self, method, args=(), context=None, timeout=None):
 
         if not isinstance(args, (list, tuple)):
             args = [args]
@@ -57,7 +57,8 @@ class DubboClient(object):
             'version': self.__version,
             'method': method,
             'path': self.__interface,
-            'arguments': args
+            'arguments': args,
+            'context': context
         }
 
         logger.debug('Start request, host={}, params={}'.format(host, request_param))

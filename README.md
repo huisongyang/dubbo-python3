@@ -69,6 +69,12 @@ channel = Object('com.qianmi.pc.base.api.constants.ChannelEnum')
 channel['name'] = 'D2C'
 ```
 
+#### 如何使用rpc context
+```python
+ctx = {'x-dubbo-x': '123'}
+result = dubbo_cli.call('listByIdString', admin_id, context=ctx)
+```
+
 ## Reference
 
 * Python字节相关的转化操作：<https://docs.python.org/2/library/struct.html>

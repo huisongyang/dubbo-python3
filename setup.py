@@ -26,7 +26,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='python3-dubbo',
-    version='0.0.7',
+    version='0.0.8',
     url='https://github.com/huisongyang/dubbo-python3',
     author='yanghuisong',
     author_email='yanghuisong@foxmail.com',

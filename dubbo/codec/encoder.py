@@ -80,6 +80,7 @@ class Request(object):
         version = self.__body['version']
         method = self.__body['method']
         arguments = self.__body['arguments']
+        context = self.__body['context']
 
         body = []
         body.extend(self._encode_single_value(dubbo_version))
@@ -95,6 +96,8 @@ class Request(object):
             'interface': path,
             'version': version
         }
+        if context is not None:
+            attachments.update(context)
 
         body.append(ord('H'))
         for key in attachments.keys():
